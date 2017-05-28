@@ -1,0 +1,36 @@
+﻿<nav md-tab-nav-bar>
+    <a md-tab-link
+       *ngFor="let tab of navLinks"
+       [routerLink]="tab.link"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+        {{tab.label}}
+    </a>
+</nav>
+<md-progress-spinner color="primary" [ngClass]="{'hidden': !isLoading}" mode="indeterminate"></md-progress-spinner>
+<div class="list-item" *ngFor="let match of matchs">
+    <div class="nameDiv">
+        {{match.competition.nom}}
+    </div>
+    <div class="dateDiv">
+        {{match.date | date: 'dd/MM/y HH:mm'}}
+    </div>
+    <div fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="space-around center">
+        <div class="imgDiv" fxFlex="10" fxShow="false" fxShow.gt-xs>
+            <img [ngClass]="{'hidden': isHOFC(match.equipe1)}" src="../../assets/images/icon.png" />
+        </div>
+        <div class="teamName" fxFlex="35">
+            {{match.equipe1}}
+        </div>
+        <div class="scoreDiv" fxFlex>
+            {{ (match.score1 != null && match.score2 != null) ? match.score1 + ' - ' + match.score2 : '' }}
+            {{ match.message != null ? match.message : ''}}
+        </div>
+        <div class="teamName" fxFlex="35">
+            {{match.equipe2}}
+        </div>
+        <div class="imgDiv" fxFlex="10" fxShow="false" fxShow.gt-xs>
+            <img [ngClass]="{'hidden': isHOFC(match.equipe2)}" src="../../assets/images/icon.png" />
+        </div>
+    </div>
+</div>

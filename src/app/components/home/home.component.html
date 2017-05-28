@@ -1,0 +1,9 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap="wrap" fxLayoutAlign="space-around center">
+    <md-card fxFlex.gt-xs="40%" [fxFlex.gt-md]="regularDistribution"  *ngFor="let actu of actus; let i = index">
+        <md-card-title>{{actu.titre}}</md-card-title>
+        <img md-card-image [src]="actu.image"/>
+        <md-card-content>
+            <p>{{actu.texte}}</p>
+        </md-card-content>
+    </md-card>
+</div>

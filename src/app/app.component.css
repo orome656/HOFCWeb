@@ -1,0 +1,12 @@
+md-sidenav a {
+    text-decoration: none;
+    color: black;
+}
+
+md-toolbar md-icon {
+    margin-right:1em;
+}
+
+md-sidenav md-list-item {
+    width: 200px;
+}

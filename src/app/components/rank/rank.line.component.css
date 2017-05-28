@@ -1,0 +1,19 @@
+﻿.hidden {
+    display: none !important;
+}
+
+.row {
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    height: 3em;
+}
+
+.row .nomDiv {
+    text-align: initial;
+    font-weight: bold;
+}
+
+.row img {
+    height: 3em;
+}

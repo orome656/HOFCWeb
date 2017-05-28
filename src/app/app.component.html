@@ -1,3 +1,47 @@
-<h1>
-  {{title}}
-</h1>
+<div style="position:fixed;z-index:2;width:100%;">
+    <md-toolbar color="primary">
+        <md-icon (click)="sidenav.open()">menu</md-icon>
+        <span>WebHOFC</span>
+    </md-toolbar>
+</div>
+<md-sidenav-container fullscreen>
+    <md-sidenav #sidenav>
+        <div style="height:50px;"></div>
+        <md-list>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/home']">Actu</a>
+            </md-list-item>
+            <h3 md-subheader>Calendrier</h3>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/calendar/equipe1']">Equipe 1</a>
+            </md-list-item>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/calendar/equipe2']">Equipe 2</a>
+            </md-list-item>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/calendar/equipe3']">Equipe 3</a>
+            </md-list-item>
+        </md-list>
+        <md-list>
+            <h3 md-subheader>Classement</h3>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/rank/equipe1']">Equipe 1</a>
+            </md-list-item>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/rank/equipe2']">Equipe 2</a>
+            </md-list-item>
+            <md-list-item>
+                <a (click)="sidenav.close()" [routerLink]="['/rank/equipe3']">Equipe 3</a>
+            </md-list-item>
+        </md-list>
+        <md-list>
+            <h3 md-subheader>Agenda</h3>
+            <md-list-item *ngFor="let week of weeks">
+                <a (click)="sidenav.close()" [routerLink]="[week.link]">{{week.label}}</a>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+    <main class="mdl-layout__content">
+        <router-outlet class="mdl-grid"></router-outlet>
+    </main>
+</md-sidenav-container>

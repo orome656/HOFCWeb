@@ -1,0 +1,38 @@
+﻿<div class="row"
+     fxLayout="row"
+     fxLayoutWrap="wrap"
+     fxLayoutAlign="space-around center">
+    <div class="imgDiv" fxFlex="10" fxShow="false" fxShow.gt-xs>
+        <img [ngClass]="{'hidden': isHOFC()}" src="../../assets/images/icon.png" />
+    </div>
+    <div fxFlex="7">
+        {{rank}}
+    </div>
+    <div class="nomDiv" fxFlex>
+        {{nom}}
+    </div>
+    <div fxFlex="7">
+        {{points}}
+    </div>
+    <div fxFlex="7">
+        {{joue}}
+    </div>
+    <div fxFlex="7" fxShow="false" fxShow.gt-xs>
+        {{victoire}}
+    </div>
+    <div fxFlex="7" fxShow="false" fxShow.gt-xs>
+        {{nul}}
+    </div>
+    <div fxFlex="7" fxShow="false" fxShow.gt-xs>
+        {{defaite}}
+    </div>
+    <div fxFlex="7" fxShow="false" fxShow.gt-xs>
+        {{bp}}
+    </div>
+    <div fxFlex="7" fxShow="false" fxShow.gt-xs>
+        {{bc}}
+    </div>
+    <div fxFlex="7">
+        {{diff}}
+    </div>
+</div>

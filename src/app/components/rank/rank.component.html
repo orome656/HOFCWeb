@@ -1,0 +1,35 @@
+﻿<nav md-tab-nav-bar>
+    <a md-tab-link
+       *ngFor="let tab of navLinks"
+       [routerLink]="tab.link"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
+        {{tab.label}}
+    </a>
+</nav>
+<md-progress-spinner color="primary" [ngClass]="{'hidden': !isLoading}" mode="indeterminate"></md-progress-spinner>
+
+<rank-line [ngClass]="{'hidden': isLoading}"
+           rank="#"
+           nom="Nom"
+           points="P"
+           joue="J"
+           victoire="V"
+           nul="N"
+           defaite="D"
+           bp="BP"
+           bc="BC"
+           diff="Diff"></rank-line>
+
+<rank-line *ngFor="let rank of _ranks; let i = index"
+           [ngClass]="{'hidden': isLoading}"
+           [rank]="i + 1"
+           [nom]="rank.nom"
+           [points]="rank.points"
+           [joue]="rank.joue"
+           [victoire]="rank.victoire"
+           [nul]="rank.nul"
+           [defaite]="rank.defaite"
+           [bp]="rank.bp"
+           [bc]="rank.bc"
+           [diff]="rank.diff"></rank-line>
