@@ -10,3 +10,7 @@ md-toolbar md-icon {
 md-sidenav md-list-item {
     width: 200px;
 }
+
+md-sidenav-container{
+    top: 64px !important;
+}
