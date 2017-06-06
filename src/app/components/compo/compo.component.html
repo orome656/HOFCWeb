@@ -1,0 +1,22 @@
+<div class="teamCompo" fxLayout='column'>
+    <div *ngIf="gardien" class="G" fxLayout='row' fxFlex="15">
+        <player [player]="gardien" fxFlex="grow"></player>
+    </div>
+    <div *ngIf="defenseurs" class="D" fxLayout='row' fxFlex="15">
+        <player *ngFor='let player of defenseurs' [player]="player" fxFlex="{{100 / defenseurs.length}}"></player>
+    </div>
+    <div style="height:50px;"></div>
+    <div *ngIf="milieuxDef" class="MDF" fxLayout='row' fxFlex="15">
+        <player *ngFor='let player of milieuxDef' [player]="player" fxFlex="{{100 / milieuxDef.length}}"></player>
+    </div>
+    <div *ngIf="milieux" class="M" fxLayout='row' fxFlex="15">
+        <player *ngFor='let player of milieux' [player]="player" fxFlex="{{100 / milieux.length}}"></player>
+    </div>
+    <div *ngIf="milieuxOf" class="MO" fxLayout='row' fxFlex="15">
+        <player *ngFor='let player of milieuxOf' [player]="player" fxFlex="{{100 / milieuxOf.length}}"></player>
+    </div>
+    <div style="height:50px;"></div>
+    <div *ngIf="buteurs" class="BT" fxLayout='row' fxFlex="15">
+        <player *ngFor='let player of buteurs' [player]="player" fxFlex="{{100 / buteurs.length}}"></player>
+    </div>
+</div>

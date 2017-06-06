@@ -1,5 +1,6 @@
 ﻿import { CommonCompetition } from './common.competition';
 import { StatutVote } from '../enums/StatutVote';
+import { JoueurMatch } from './joueur.match';
 
 export class Match extends CommonCompetition {
     id: number;
@@ -11,4 +12,5 @@ export class Match extends CommonCompetition {
     message: string;
     infos: string;
     voteStatut: StatutVote;
+    joueurs: Array<JoueurMatch>
 }

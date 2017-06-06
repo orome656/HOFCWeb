@@ -8,6 +8,9 @@ import { CardComponent } from './components/card/card.component';
 import { RankComponent } from './components/rank/rank.component';
 import { AgendaComponent } from './components/agenda/agenda.component';
 import { RankLineComponent } from './components/rank/rank.line.component';
+import { CompoComponent } from './components/compo/compo.component';
+import { PlayerComponent } from './components/compo/player.component';
+import { MatchDetailsComponent } from './components/matchs/match-details.component';
 import { TeamPipe } from './filters/team';
 import { AgendaPipe } from './filters/agenda';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -27,7 +30,10 @@ import { HttpModule } from '@angular/http';
         RankComponent,
         RankLineComponent,
         TeamPipe,
-        AgendaPipe
+        AgendaPipe,
+        CompoComponent,
+        PlayerComponent,
+        MatchDetailsComponent
     ],
     imports: [
       BrowserModule,
@@ -42,6 +48,7 @@ import { HttpModule } from '@angular/http';
             { path: 'calendar/:team', component: CalendarComponent, },
             { path: 'rank/:team', component: RankComponent, },
             { path: 'agenda/:date', component: AgendaComponent, },
+            { path: 'matchs/:idMatch', component: MatchDetailsComponent },
             { path: '**', redirectTo: 'home' }
         ])
 

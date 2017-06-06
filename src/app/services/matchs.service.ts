@@ -21,6 +21,12 @@ export class MatchService {
             .catch(this.logError);
     }
 
+    getMatchDetails(id: number): Observable<Match> {
+        return this._http.get(this._siteUrl + '/' + id)
+            .map(this.extractDetails)
+            .catch(this.logErrorDetails);
+    }
+
     getHOFCMatchsForTeam(equipe: string): Observable<Match[]> {
         return this._http.get(this._siteUrl + '/team/' + equipe)
             .map(this.extractData)
@@ -41,7 +47,18 @@ export class MatchService {
         return data;
     }
 
+    extractDetails(response: Response): Match {
+        var match = <Match>response.json();
+        match.date = new Date(match.date);
+        return match;
+    }
+
     logError(error: Response, caught: Observable<Match[]>): ObservableInput<Match[]> {
+        console.log(error);
+        return Observable.throw(error);
+    }
+
+    logErrorDetails(error: Response, caught: Observable<Match>): ObservableInput<Match[]> {
         console.log(error);
         return Observable.throw(error);
     }
